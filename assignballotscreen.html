@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 20;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #2196F3;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #064579;
+}
+
+.main {
+    margin-left: 205px; /* Same width as the sidebar + left position in px */
+    font-size: 16px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    background: gray url(https://subtlepatterns.com/patterns/geometry2.png) repeat 0 0;
+    height: 2000px;
+    width: 80%;
+    top: 20;
+/*   text-align: center;
+  padding-top: 120px;
+ */  box-sizing: border-box;
+  	-webkit-animation: slide 20s linear infinite;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+  align: center;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.inspectorslogo {
+  width: 13.5%;
+  height: auto;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header" id="myHeader">
+  <img class="inspectorslogo" src="Images/inspectors-logo.png">
+</div>
+
+<div class="content">
+	<div class="sidenav">
+	  <a href="myelections.html">My Elections</a>
+	  <a href="myprofile.html">My Profile</a>
+	  <a href="manageusers.html">Manage Users</a>
+	  <a href="electionsandhoa.html">Associations & Elections</a>
+	  <a href="assignballotscreen.html">Assign Ballot Screening</a>
+	  <a href="#contact">Contact</a>
+	</div>
+	
+	<div class="main">
+	  <h2>Welcome!</h2>
+	</div>  
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>  
+
+</body>
+</html> 
